@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top EDGE Rushers - Class of 2025</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Top 50 EDGE Rushers - Class of 2025</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { display: flex; align-items: center; background: #00274C; color: white; padding: 15px; }
-    header h1 { margin: 0; font-size: 1.8em; }
-    nav { margin-left: auto; }
-    nav a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    main { padding: 20px; }
-    h2 { color: #00274C; }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    table th, table td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    table th { background: #00274C; color: white; }
-    tr:nth-child(even) { background: #f2f2f2; }
-    footer { background: #eee; padding: 10px; text-align: center; font-size: 0.9em; color: #555; }
+    body { font-family: Arial, sans-serif; margin:0; background:#f9f9f9; color:#222; }
+    header { display:flex; align-items:center; background:#00274C; color:white; padding:14px; }
+    header h1 { margin:0; font-size:1.4rem; }
+    nav { margin-left:auto; }
+    nav a { color:white; text-decoration:none; margin-left:12px; font-weight:600; }
+    main { padding:18px; max-width:1200px; margin:0 auto; }
+    h2 { color:#00274C; margin-bottom:12px; }
+    table { width:100%; border-collapse:collapse; background:white; border-radius:6px; overflow:hidden; }
+    th, td { padding:8px 10px; border-bottom:1px solid #eee; text-align:left; }
+    th { background:#00274C; color:white; position:sticky; top:0; }
+    tr:nth-child(even) td { background:#fbfbfb; }
+    .small { color:#555; font-size:0.9rem; }
+    footer { background:#eee; padding:12px; text-align:center; color:#555; margin-top:14px; }
   </style>
 </head>
 <body>
   <header>
-    <h1>Top EDGE Rushers - Class of 2025</h1>
+    <h1>Top 50 EDGE Rushers — Class of 2025</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="nfl.html">NFL Players</a>
@@ -31,56 +31,99 @@
   </header>
 
   <main>
-    <h2>Top Prospects</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Name</th>
-          <th>Height</th>
-          <th>Weight</th>
-          <th>Hometown / High School</th>
-          <th>2024 Stats</th>
-          <th>Committed School</th>
-        </tr>
-      </thead>
-      <tbody id="recruits-table"></tbody>
-    </table>
+    <h2>Top 50 (sample data — replace with verified stats as needed)</h2>
+    <div style="overflow:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Hometown / HS</th>
+            <th>2024 Stats</th>
+            <th>Committed</th>
+          </tr>
+        </thead>
+        <tbody id="recruits-table"></tbody>
+      </table>
+    </div>
   </main>
 
   <footer>
-    <small>Last updated: 2025</small>
+    <small>Last updated: 2025 — verify commit & stat details with recruitment sources (247Sports, On3, Rivals).</small>
   </footer>
 
   <script>
+    // 50 entries — sample values; replace with official recruiting data when ready
     const recruits = [
-      { rank: 1, name: "Elijah Griffin", height: "6'3", weight: "270", hometown: "Savannah, GA (Savannah Christian)", stats: "68 tackles, 12 sacks, 20 TFL", school: "Alabama" },
-      { rank: 2, name: "Zahir Mathis", height: "6'6", weight: "235", hometown: "Philadelphia, PA (Imhotep Charter)", stats: "55 tackles, 10 sacks, 15 TFL", school: "Ohio State" },
-      { rank: 3, name: "Jadon Blair", height: "6'5", weight: "240", hometown: "Charlotte, NC (Mount Tabor)", stats: "60 tackles, 9 sacks, 18 TFL", school: "Penn State" },
-      { rank: 4, name: "Julian Lewis", height: "6'4", weight: "250", hometown: "Atlanta, GA (Carrollton)", stats: "52 tackles, 8 sacks, 14 TFL", school: "Georgia" },
-      { rank: 5, name: "Bryce Davis", height: "6'4", weight: "245", hometown: "Greensboro, NC (Grimsley)", stats: "70 tackles, 11 sacks, 21 TFL", school: "Clemson" },
-      { rank: 6, name: "Malik Williams", height: "6'5", weight: "255", hometown: "Dallas, TX (South Oak Cliff)", stats: "62 tackles, 10 sacks, 16 TFL", school: "Texas" },
-      { rank: 7, name: "Cameron Brooks", height: "6'3", weight: "260", hometown: "Los Angeles, CA (Mater Dei)", stats: "66 tackles, 12 sacks, 19 TFL", school: "USC" },
-      { rank: 8, name: "Isaiah Walker", height: "6'4", weight: "250", hometown: "Miami, FL (Central)", stats: "58 tackles, 9 sacks, 17 TFL", school: "Florida State" },
-      { rank: 9, name: "Jordan Thompson", height: "6'5", weight: "265", hometown: "Chicago, IL (St. Rita)", stats: "63 tackles, 11 sacks, 18 TFL", school: "Michigan" },
-      { rank: 10, name: "Terrance Moore", height: "6'3", weight: "255", hometown: "Houston, TX (North Shore)", stats: "54 tackles, 8 sacks, 13 TFL", school: "LSU" }
-      // 🔽 Add more recruits up to 50
+      {rank:1, name:"Elijah Griffin", height:"6'3", weight:"270", hometown:"Savannah, GA (Savannah Christian)", stats:"68-12sacks-20TFL", committed:"Alabama"},
+      {rank:2, name:"Zahir Mathis", height:"6'6", weight:"235", hometown:"Philadelphia, PA (Imhotep)", stats:"55-10s-15TFL", committed:"Ohio State"},
+      {rank:3, name:"Jadon Blair", height:"6'5", weight:"240", hometown:"Charlotte, NC (Mallard Creek)", stats:"60-9s-18TFL", committed:"Penn State"},
+      {rank:4, name:"Julian Lewis", height:"6'4", weight:"250", hometown:"Atlanta, GA (Carver)", stats:"52-8s-14TFL", committed:"Georgia"},
+      {rank:5, name:"Bryce Davis", height:"6'4", weight:"245", hometown:"Greensboro, NC (Page)", stats:"70-11s-21TFL", committed:"Clemson"},
+      {rank:6, name:"Malik Williams", height:"6'5", weight:"255", hometown:"Dallas, TX (South Oak Cliff)", stats:"62-10s-16TFL", committed:"Texas"},
+      {rank:7, name:"Cameron Brooks", height:"6'3", weight:"260", hometown:"Los Angeles, CA (Mater Dei)", stats:"66-12s-19TFL", committed:"USC"},
+      {rank:8, name:"Isaiah Walker", height:"6'4", weight:"250", hometown:"Miami, FL (Central)", stats:"58-9s-17TFL", committed:"Florida State"},
+      {rank:9, name:"Jordan Thompson", height:"6'5", weight:"265", hometown:"Chicago, IL (St. Rita)", stats:"63-11s-18TFL", committed:"Michigan"},
+      {rank:10, name:"Terrance Moore", height:"6'3", weight:"255", hometown:"Houston, TX (North Shore)", stats:"54-8s-13TFL", committed:"LSU"},
+      {rank:11, name:"Aaron Pike", height:"6'4", weight:"245", hometown:"Orlando, FL (Dr. Phillips)", stats:"59-9s-15TFL", committed:"Miami (FL)"},
+      {rank:12, name:"Devon Hayes", height:"6'2", weight:"240", hometown:"Birmingham, AL (Hoover)", stats:"64-10s-17TFL", committed:"Auburn"},
+      {rank:13, name:"Trevor Banks", height:"6'6", weight:"265", hometown:"Norcross, GA (Norcross)", stats:"51-7s-12TFL", committed:"Georgia Tech"},
+      {rank:14, name:"Ethan Ruiz", height:"6'3", weight:"255", hometown:"San Antonio, TX (Madison)", stats:"57-8s-14TFL", committed:"Texas A&M"},
+      {rank:15, name:"Logan Byrne", height:"6'4", weight:"250", hometown:"Cleveland, OH (St. Ignatius)", stats:"60-9s-16TFL", committed:"Ohio State"},
+      {rank:16, name:"Marcus Hale", height:"6'2", weight:"235", hometown:"Jacksonville, FL (Ribault)", stats:"49-6s-11TFL", committed:"Florida"},
+      {rank:17, name:"Nate Coleman", height:"6'5", weight:"260", hometown:"Tampa, FL (Plant)", stats:"68-13s-22TFL", committed:"USF"},
+      {rank:18, name:"Owen Carter", height:"6'3", weight:"245", hometown:"Indianapolis, IN (Perry Meridian)", stats:"55-8s-15TFL", committed:"Purdue"},
+      {rank:19, name:"Kareem Ali", height:"6'4", weight:"255", hometown:"Brooklyn, NY (Bensonhurst)", stats:"53-7s-12TFL", committed:"Rutgers"},
+      {rank:20, name:"Dante Rivers", height:"6'5", weight:"270", hometown:"Baton Rouge, LA (Tate)", stats:"72-14s-23TFL", committed:"LSU"},
+      {rank:21, name:"Eli Turner", height:"6'3", weight:"245", hometown:"Columbus, OH (DeSales)", stats:"50-6s-10TFL", committed:"Ohio State"},
+      {rank:22, name:"Simeon Reed", height:"6'6", weight:"235", hometown:"San Diego, CA (Canyon Crest)", stats:"44-5s-9TFL", committed:"San Diego State"},
+      {rank:23, name:"Peter Novak", height:"6'2", weight:"240", hometown:"Milwaukee, WI (Marquette)", stats:"58-8s-14TFL", committed:"Wisconsin"},
+      {rank:24, name:"Aaron Hayes", height:"6'4", weight:"250", hometown:"Lexington, KY (Henry Clay)", stats:"61-10s-15TFL", committed:"Kentucky"},
+      {rank:25, name:"Miles Ortega", height:"6'5", weight:"255", hometown:"Tucson, AZ (Salpointe)", stats:"47-7s-11TFL", committed:"Arizona"},
+      {rank:26, name:"Caleb Reed", height:"6'3", weight:"245", hometown:"Fresno, CA (Buchanan)", stats:"56-9s-16TFL", committed:"Fresno State"},
+      {rank:27, name:"Nolan Price", height:"6'4", weight:"260", hometown:"Ogden, UT (Ben Lomond)", stats:"63-11s-17TFL", committed:"Utah"},
+      {rank:28, name:"Isaac Monroe", height:"6'2", weight:"235", hometown:"Memphis, TN (Whitehaven)", stats:"48-6s-12TFL", committed:"Memphis"},
+      {rank:29, name:"Ryan Flores", height:"6'5", weight:"270", hometown:"El Paso, TX (Andress)", stats:"69-12s-20TFL", committed:"TCU"},
+      {rank:30, name:"Deon Brooks", height:"6'4", weight:"250", hometown:"Raleigh, NC (Millbrook)", stats:"52-8s-13TFL", committed:"NC State"},
+      {rank:31, name:"Gavin Holt", height:"6'3", weight:"245", hometown:"Hartford, CT (Bristol Central)", stats:"46-7s-10TFL", committed:"UConn"},
+      {rank:32, name:"Samir Khan", height:"6'6", weight:"260", hometown:"Chicago, IL (Lane Tech)", stats:"64-12s-18TFL", committed:"Northwestern"},
+      {rank:33, name:"Zane Carter", height:"6'4", weight:"255", hometown:"Des Moines, IA (Dowling)", stats:"57-9s-15TFL", committed:"Iowa"},
+      {rank:34, name:"Brandon Ellis", height:"6'3", weight:"240", hometown:"St. Louis, MO (De Smet)", stats:"49-7s-11TFL", committed:"Missouri"},
+      {rank:35, name:"Terrence King", height:"6'5", weight:"265", hometown:"Riverside, CA (Centennial)", stats:"71-13s-22TFL", committed:"UCLA"},
+      {rank:36, name:"Marcus Boone", height:"6'2", weight:"235", hometown:"Richmond, VA (Hermitage)", stats:"45-6s-9TFL", committed:"Virginia"},
+      {rank:37, name:"Cole Matthews", height:"6'4", weight:"250", hometown:"Boise, ID (Bishop Kelly)", stats:"59-10s-16TFL", committed:"Boise State"},
+      {rank:38, name:"Nate Vargas", height:"6'3", weight:"245", hometown:"San Jose, CA (Bellarmine)", stats:"51-8s-14TFL", committed:"Stanford"},
+      {rank:39, name:"Omar Diaz", height:"6'5", weight:"270", hometown:"Phoenix, AZ (Brophy)", stats:"66-11s-19TFL", committed:"Arizona State"},
+      {rank:40, name:"Luis Mendez", height:"6'3", weight:"240", hometown:"Miami, FL (Christopher Columbus)", stats:"50-9s-13TFL", committed:"Miami (FL)"},
+      {rank:41, name:"Quinton Bell", height:"6'4", weight:"255", hometown:"Atlanta, GA (Marist)", stats:"55-9s-14TFL", committed:"Georgia State"},
+      {rank:42, name:"Riley Ford", height:"6'5", weight:"260", hometown:"Ann Arbor, MI (Pioneer)", stats:"62-11s-18TFL", committed:"Michigan"},
+      {rank:43, name:"Tre Mason", height:"6'2", weight:"235", hometown:"Seattle, WA (Garfield)", stats:"47-7s-12TFL", committed:"Washington"},
+      {rank:44, name:"Darius Cole", height:"6'5", weight:"265", hometown:"Bossier City, LA (Bossier)", stats:"70-12s-21TFL", committed:"LSU"},
+      {rank:45, name:"Kellen Shaw", height:"6'3", weight:"245", hometown:"Tampa, FL (Jesuit)", stats:"54-8s-14TFL", committed:"South Florida"},
+      {rank:46, name:"Aaron Powell", height:"6'4", weight:"255", hometown:"Columbus, GA (Kinnett)", stats:"60-10s-17TFL", committed:"Georgia Southern"},
+      {rank:47, name:"Ethan Park", height:"6'2", weight:"235", hometown:"Rochester, NY (Greece)", stats:"46-6s-10TFL", committed:"Syracuse"},
+      {rank:48, name:"Miles Jefferson", height:"6'4", weight:"250", hometown:"Charleston, SC (Berkeley)", stats:"58-9s-15TFL", committed:"South Carolina"},
+      {rank:49, name:"Noah Greene", height:"6'5", weight:"265", hometown:"Hartford, CT (Windsor)", stats:"67-12s-20TFL", committed:"UConn"},
+      {rank:50, name:"Colton Hayes", height:"6'3", weight:"245", hometown:"Madison, WI (East)", stats:"53-8s-13TFL", committed:"Wisconsin"}
     ];
 
     function renderRecruits(list) {
-      const table = document.getElementById('recruits-table');
+      const tbody = document.getElementById('recruits-table');
+      tbody.innerHTML = '';
       list.forEach(r => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
           <td>${r.rank}</td>
           <td>${r.name}</td>
           <td>${r.height}</td>
           <td>${r.weight}</td>
           <td>${r.hometown}</td>
-          <td>${r.stats}</td>
-          <td>${r.school}</td>
+          <td class="small">${r.stats}</td>
+          <td>${r.committed}</td>
         `;
-        table.appendChild(row);
+        tbody.appendChild(tr);
       });
     }
 
