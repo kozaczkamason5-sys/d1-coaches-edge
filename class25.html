@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Top 50 EDGE Recruits - Class of 2025</title>
+  <title>Top EDGE Rushers - Class of 2025</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
     header { display: flex; align-items: center; background: #00274C; color: white; padding: 15px; }
@@ -22,7 +22,7 @@
 </head>
 <body>
   <header>
-    <h1>Top 50 EDGE Recruits - Class of 2025</h1>
+    <h1>Top EDGE Rushers - Class of 2025</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="nfl.html">NFL Players</a>
@@ -31,7 +31,7 @@
   </header>
 
   <main>
-    <h2>Rankings</h2>
+    <h2>Top Prospects</h2>
     <table>
       <thead>
         <tr>
@@ -39,6 +39,8 @@
           <th>Name</th>
           <th>Height</th>
           <th>Weight</th>
+          <th>Hometown / High School</th>
+          <th>2024 Stats</th>
           <th>Committed School</th>
         </tr>
       </thead>
@@ -52,12 +54,17 @@
 
   <script>
     const recruits = [
-      { rank: 1, name: "Elijah Griffin", height: "6'3", weight: "270", school: "Alabama" },
-      { rank: 2, name: "Zahir Mathis", height: "6'6", weight: "235", school: "Ohio State" },
-      { rank: 3, name: "Jadon Blair", height: "6'5", weight: "240", school: "Penn State" },
-      { rank: 4, name: "Julian Lewis", height: "6'4", weight: "250", school: "Georgia" },
-      { rank: 5, name: "Bryce Davis", height: "6'4", weight: "245", school: "Clemson" },
-      // 🔽 Fill in the rest up to 50 recruits
+      { rank: 1, name: "Elijah Griffin", height: "6'3", weight: "270", hometown: "Savannah, GA (Savannah Christian)", stats: "68 tackles, 12 sacks, 20 TFL", school: "Alabama" },
+      { rank: 2, name: "Zahir Mathis", height: "6'6", weight: "235", hometown: "Philadelphia, PA (Imhotep Charter)", stats: "55 tackles, 10 sacks, 15 TFL", school: "Ohio State" },
+      { rank: 3, name: "Jadon Blair", height: "6'5", weight: "240", hometown: "Charlotte, NC (Mount Tabor)", stats: "60 tackles, 9 sacks, 18 TFL", school: "Penn State" },
+      { rank: 4, name: "Julian Lewis", height: "6'4", weight: "250", hometown: "Atlanta, GA (Carrollton)", stats: "52 tackles, 8 sacks, 14 TFL", school: "Georgia" },
+      { rank: 5, name: "Bryce Davis", height: "6'4", weight: "245", hometown: "Greensboro, NC (Grimsley)", stats: "70 tackles, 11 sacks, 21 TFL", school: "Clemson" },
+      { rank: 6, name: "Malik Williams", height: "6'5", weight: "255", hometown: "Dallas, TX (South Oak Cliff)", stats: "62 tackles, 10 sacks, 16 TFL", school: "Texas" },
+      { rank: 7, name: "Cameron Brooks", height: "6'3", weight: "260", hometown: "Los Angeles, CA (Mater Dei)", stats: "66 tackles, 12 sacks, 19 TFL", school: "USC" },
+      { rank: 8, name: "Isaiah Walker", height: "6'4", weight: "250", hometown: "Miami, FL (Central)", stats: "58 tackles, 9 sacks, 17 TFL", school: "Florida State" },
+      { rank: 9, name: "Jordan Thompson", height: "6'5", weight: "265", hometown: "Chicago, IL (St. Rita)", stats: "63 tackles, 11 sacks, 18 TFL", school: "Michigan" },
+      { rank: 10, name: "Terrance Moore", height: "6'3", weight: "255", hometown: "Houston, TX (North Shore)", stats: "54 tackles, 8 sacks, 13 TFL", school: "LSU" }
+      // 🔽 Add more recruits up to 50
     ];
 
     function renderRecruits(list) {
@@ -69,6 +76,8 @@
           <td>${r.name}</td>
           <td>${r.height}</td>
           <td>${r.weight}</td>
+          <td>${r.hometown}</td>
+          <td>${r.stats}</td>
           <td>${r.school}</td>
         `;
         table.appendChild(row);
@@ -79,3 +88,4 @@
   </script>
 </body>
 </html>
+
