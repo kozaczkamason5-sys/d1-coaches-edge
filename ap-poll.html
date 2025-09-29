@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AP Top 25 - College Football</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { display: flex; align-items: center; background: #00274C; color: white; padding: 15px; }
+    header h1 { margin: 0; font-size: 1.8em; }
+    nav { margin-left: auto; }
+    nav a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    main { padding: 20px; }
+    h2 { color: #00274C; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    table th, table td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    table th { background: #00274C; color: white; }
+    tr:nth-child(even) { background: #f2f2f2; }
+    footer { background: #eee; padding: 10px; text-align: center; font-size: 0.9em; color: #555; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>AP Top 25 - College Football</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="nfl.html">NFL Players</a>
+      <a href="class25.html">Class of 2025</a>
+      <a href="ap-poll.html">AP Poll</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>AP Top 25 Rankings (2025 Season)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Team</th>
+          <th>Record</th>
+          <th>Conference</th>
+        </tr>
+      </thead>
+      <tbody id="poll-table"></tbody>
+    </table>
+  </main>
+
+  <footer>
+    <small>Last updated: 2025</small>
+  </footer>
+
+  <script>
+    const apPoll = [
+      { rank: 1, team: "Georgia", record: "5-0", conf: "SEC" },
+      { rank: 2, team: "Michigan", record: "5-0", conf: "Big Ten" },
+      { rank: 3, team: "Texas", record: "5-0", conf: "SEC" },
+      { rank: 4, team: "Ohio State", record: "4-1", conf: "Big Ten" },
+      { rank: 5, team: "Oregon", record: "5-0", conf: "Big Ten" },
+      { rank: 6, team: "Penn State", record: "5-0", conf: "Big Ten" },
+      { rank: 7, team: "Washington", record: "4-1", conf: "Big Ten" },
+      { rank: 8, team: "Alabama", record: "4-1", conf: "SEC" },
+      { rank: 9, team: "Notre Dame", record: "5-0", conf: "Independent" },
+      { rank: 10, team: "Florida State", record: "4-1", conf: "ACC" },
+      { rank: 11, team: "Ole Miss", record: "4-1", conf: "SEC" },
+      { rank: 12, team: "LSU", record: "4-1", conf: "SEC" },
+      { rank: 13, team: "Utah", record: "4-1", conf: "Big 12" },
+      { rank: 14, team: "Oklahoma", record: "4-1", conf: "SEC" },
+      { rank: 15, team: "Tennessee", record: "3-2", conf: "SEC" },
+      { rank: 16, team: "Clemson", record: "3-2", conf: "ACC" },
+      { rank: 17, team: "Kansas State", record: "4-1", conf: "Big 12" },
+      { rank: 18, team: "Missouri", record: "4-1", conf: "SEC" },
+      { rank: 19, team: "North Carolina", record: "3-2", conf: "ACC" },
+      { rank: 20, team: "USC", record: "3-2", conf: "Big Ten" },
+      { rank: 21, team: "Duke", record: "4-1", conf: "ACC" },
+      { rank: 22, team: "Miami (FL)", record: "4-1", conf: "ACC" },
+      { rank: 23, team: "Colorado", record: "3-2", conf: "Big 12" },
+      { rank: 24, team: "Texas A&M", record: "3-2", conf: "SEC" },
+      { rank: 25, team: "Wisconsin", record: "3-2", conf: "Big Ten" }
+    ];
+
+    function renderPoll(list) {
+      const table = document.getElementById('poll-table');
+      list.forEach(team => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${team.rank}</td>
+          <td>${team.team}</td>
+          <td>${team.record}</td>
+          <td>${team.conf}</td>
+        `;
+        table.appendChild(row);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => renderPoll(apPoll));
+  </script>
+</body>
+</html>
