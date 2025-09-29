@@ -3,32 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NFL EDGE/DE Players by School</title>
+  <title>NFL EDGE Rushers</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
     header { display: flex; align-items: center; background: #00274C; color: white; padding: 15px; }
-    header h1 { margin-left: 15px; font-size: 1.8em; }
+    header h1 { margin: 0; font-size: 1.8em; }
     nav { margin-left: auto; }
     nav a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; }
     nav a:hover { text-decoration: underline; }
     main { padding: 20px; }
     h2 { color: #00274C; }
-    .school-card { background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #ccc; }
+    .player-card {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 15px;
+    }
+    .player-card h3 {
+      margin: 0 0 5px 0;
+      color: #00274C;
+    }
     footer { background: #eee; padding: 10px; text-align: center; font-size: 0.9em; color: #555; }
   </style>
 </head>
 <body>
   <header>
-    <img src="profile.jpg" alt="Profile Picture" style="width:60px;height:60px;border-radius:50%;border:2px solid white;object-fit:cover;">
-    <h1>NFL EDGE/DE Players by School</h1>
+    <h1>NFL EDGE Rushers</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="nfl.html">NFL Players</a>
+      <a href="class25.html">Class of 2025</a>
     </nav>
   </header>
 
-  <main id="nfl-list">
-    <h2>Players</h2>
+  <main>
+    <h2>Notable EDGE/DE Players from D1 Schools</h2>
+    <div id="nfl-list"></div>
   </main>
 
   <footer>
@@ -36,26 +47,85 @@
   </footer>
 
   <script>
-    const nflPlayers = {
-      "Alabama": ["Will Anderson Jr. (Houston Texans)", "Quinnen Williams (NY Jets)"],
-      "Georgia": ["Travon Walker (Jacksonville Jaguars)", "Jordan Davis (Philadelphia Eagles)"],
-      "Clemson": ["Clelin Ferrell (Washington Commanders)", "Dexter Lawrence (NY Giants)"],
-      "Ohio State": ["Chase Young (New Orleans Saints)", "Nick Bosa (San Francisco 49ers)"],
-      "USC": ["Drake Jackson (San Francisco 49ers)"],
-      "LSU": ["Danielle Hunter (Houston Texans)", "BJ Ojulari (Arizona Cardinals)"],
-      "Penn State": ["Yetur Gross-Matos (San Francisco 49ers)", "Odafe Oweh (Baltimore Ravens)"],
-      "Texas": ["Joseph Ossai (Cincinnati Bengals)"],
-      "Utah": ["Bradlee Anae (NY Jets)"],
-      "Wisconsin": ["TJ Watt (Pittsburgh Steelers)", "Nick Herbig (Pittsburgh Steelers)"]
-    };
+    const nflPlayers = [
+      {
+        name: "Myles Garrett",
+        college: "Texas A&M",
+        team: "Cleveland Browns",
+        career: "No. 1 overall pick in 2017, 4x Pro Bowler, 2x First-team All-Pro. Known for elite power and speed."
+      },
+      {
+        name: "Nick Bosa",
+        college: "Ohio State",
+        team: "San Francisco 49ers",
+        career: "2019 Defensive Rookie of the Year, 2x Pro Bowler, Super Bowl LIV appearance, dominant pass rusher."
+      },
+      {
+        name: "Joey Bosa",
+        college: "Ohio State",
+        team: "Los Angeles Chargers",
+        career: "2016 Defensive Rookie of the Year, multiple Pro Bowls, one of the NFL’s most consistent EDGE defenders."
+      },
+      {
+        name: "Chase Young",
+        college: "Ohio State",
+        team: "New Orleans Saints",
+        career: "2nd overall pick in 2020, NFL Defensive Rookie of the Year, now key part of Saints defense."
+      },
+      {
+        name: "Micah Parsons",
+        college: "Penn State",
+        team: "Dallas Cowboys",
+        career: "Though a linebacker, he frequently rushes the passer. 2021 DROY, 3x Pro Bowler, All-Pro selection."
+      },
+      {
+        name: "Von Miller",
+        college: "Texas A&M",
+        team: "Buffalo Bills",
+        career: "Super Bowl 50 MVP, 8x Pro Bowler, 2x Super Bowl champion. One of the greatest pass rushers ever."
+      },
+      {
+        name: "Khalil Mack",
+        college: "Buffalo",
+        team: "Los Angeles Chargers",
+        career: "2016 Defensive Player of the Year, 7x Pro Bowler, one of the most feared defenders of his era."
+      },
+      {
+        name: "Danielle Hunter",
+        college: "LSU",
+        team: "Houston Texans",
+        career: "Explosive edge rusher with multiple double-digit sack seasons. Known for length and athleticism."
+      },
+      {
+        name: "Bradley Chubb",
+        college: "NC State",
+        team: "Miami Dolphins",
+        career: "Top 5 draft pick in 2018, Pro Bowl selection, anchors Miami’s defensive front."
+      },
+      {
+        name: "Maxx Crosby",
+        college: "Eastern Michigan",
+        team: "Las Vegas Raiders",
+        career: "Draft steal turned superstar. 2x Pro Bowler, relentless motor, cornerstone of Raiders defense."
+      }
+    ];
 
-    const container = document.getElementById('nfl-list');
-    for (const [school, players] of Object.entries(nflPlayers)) {
-      const div = document.createElement('div');
-      div.className = 'school-card';
-      div.innerHTML = `<strong>${school}</strong><br>${players.join('<br>')}`;
-      container.appendChild(div);
+    function renderPlayers(list) {
+      const container = document.getElementById('nfl-list');
+      list.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'player-card';
+        div.innerHTML = `
+          <h3>${p.name}</h3>
+          <strong>College:</strong> ${p.college}<br>
+          <strong>Current Team:</strong> ${p.team}<br>
+          <p>${p.career}</p>
+        `;
+        container.appendChild(div);
+      });
     }
+
+    document.addEventListener('DOMContentLoaded', () => renderPlayers(nflPlayers));
   </script>
 </body>
 </html>
