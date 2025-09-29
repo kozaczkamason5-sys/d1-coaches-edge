@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFL EDGE/DE Players by School</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    header { display: flex; align-items: center; background: #00274C; color: white; padding: 15px; }
+    header h1 { margin-left: 15px; font-size: 1.8em; }
+    nav { margin-left: auto; }
+    nav a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    main { padding: 20px; }
+    h2 { color: #00274C; }
+    .school-card { background: white; padding: 15px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #ccc; }
+    footer { background: #eee; padding: 10px; text-align: center; font-size: 0.9em; color: #555; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="profile.jpg" alt="Profile Picture" style="width:60px;height:60px;border-radius:50%;border:2px solid white;object-fit:cover;">
+    <h1>NFL EDGE/DE Players by School</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="nfl.html">NFL Players</a>
+    </nav>
+  </header>
+
+  <main id="nfl-list">
+    <h2>Players</h2>
+  </main>
+
+  <footer>
+    <small>Last updated: 2025</small>
+  </footer>
+
+  <script>
+    const nflPlayers = {
+      "Alabama": ["Will Anderson Jr. (Houston Texans)", "Quinnen Williams (NY Jets)"],
+      "Georgia": ["Travon Walker (Jacksonville Jaguars)", "Jordan Davis (Philadelphia Eagles)"],
+      "Clemson": ["Clelin Ferrell (Washington Commanders)", "Dexter Lawrence (NY Giants)"],
+      "Ohio State": ["Chase Young (New Orleans Saints)", "Nick Bosa (San Francisco 49ers)"],
+      "USC": ["Drake Jackson (San Francisco 49ers)"],
+      "LSU": ["Danielle Hunter (Houston Texans)", "BJ Ojulari (Arizona Cardinals)"],
+      "Penn State": ["Yetur Gross-Matos (San Francisco 49ers)", "Odafe Oweh (Baltimore Ravens)"],
+      "Texas": ["Joseph Ossai (Cincinnati Bengals)"],
+      "Utah": ["Bradlee Anae (NY Jets)"],
+      "Wisconsin": ["TJ Watt (Pittsburgh Steelers)", "Nick Herbig (Pittsburgh Steelers)"]
+    };
+
+    const container = document.getElementById('nfl-list');
+    for (const [school, players] of Object.entries(nflPlayers)) {
+      const div = document.createElement('div');
+      div.className = 'school-card';
+      div.innerHTML = `<strong>${school}</strong><br>${players.join('<br>')}`;
+      container.appendChild(div);
+    }
+  </script>
+</body>
+</html>
