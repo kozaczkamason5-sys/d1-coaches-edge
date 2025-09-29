@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top 50 EDGE Recruits - Class of 2025</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { display: flex; align-items: center; background: #00274C; color: white; padding: 15px; }
+    header h1 { margin: 0; font-size: 1.8em; }
+    nav { margin-left: auto; }
+    nav a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    main { padding: 20px; }
+    h2 { color: #00274C; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    table th, table td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    table th { background: #00274C; color: white; }
+    tr:nth-child(even) { background: #f2f2f2; }
+    footer { background: #eee; padding: 10px; text-align: center; font-size: 0.9em; color: #555; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Top 50 EDGE Recruits - Class of 2025</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="nfl.html">NFL Players</a>
+      <a href="class25.html">Class of 2025</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Rankings</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Name</th>
+          <th>Height</th>
+          <th>Weight</th>
+          <th>Committed School</th>
+        </tr>
+      </thead>
+      <tbody id="recruits-table"></tbody>
+    </table>
+  </main>
+
+  <footer>
+    <small>Last updated: 2025</small>
+  </footer>
+
+  <script>
+    const recruits = [
+      { rank: 1, name: "Elijah Griffin", height: "6'3", weight: "270", school: "Alabama" },
+      { rank: 2, name: "Zahir Mathis", height: "6'6", weight: "235", school: "Ohio State" },
+      { rank: 3, name: "Jadon Blair", height: "6'5", weight: "240", school: "Penn State" },
+      { rank: 4, name: "Julian Lewis", height: "6'4", weight: "250", school: "Georgia" },
+      { rank: 5, name: "Bryce Davis", height: "6'4", weight: "245", school: "Clemson" },
+      // 🔽 Fill in the rest up to 50 recruits
+    ];
+
+    function renderRecruits(list) {
+      const table = document.getElementById('recruits-table');
+      list.forEach(r => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${r.rank}</td>
+          <td>${r.name}</td>
+          <td>${r.height}</td>
+          <td>${r.weight}</td>
+          <td>${r.school}</td>
+        `;
+        table.appendChild(row);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => renderRecruits(recruits));
+  </script>
+</body>
+</html>
