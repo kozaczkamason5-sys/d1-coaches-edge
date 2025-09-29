@@ -1,32 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NFL EDGE Rushers</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header { display: flex; align-items: center; background: #00274C; color: white; padding: 15px; }
-    header h1 { margin: 0; font-size: 1.8em; }
-    nav { margin-left: auto; }
-    nav a { color: white; margin-left: 15px; text-decoration: none; font-weight: bold; }
-    nav a:hover { text-decoration: underline; }
-    main { padding: 20px; }
-    h2 { color: #00274C; }
-    .player-card {
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 15px;
-      margin-bottom: 15px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .player-card h3 {
-      margin: 0 0 8px 0;
-      color: #00274C;
-    }
-    .player-card strong { color: #111; }
-    footer { background: #eee; padding: 10px; text-align: center; font-size: 0.9em; color: #555; }
+    body { font-family: Arial, sans-serif; margin:0; background:#f9f9f9; color:#222; }
+    header { display:flex; align-items:center; background:#00274C; color:white; padding:14px; }
+    header h1 { margin:0; font-size:1.6rem; }
+    nav { margin-left:auto; }
+    nav a { color:white; text-decoration:none; margin-left:12px; font-weight:600; }
+    main { padding:20px; max-width:1000px; margin:0 auto; }
+    h2 { color:#00274C; margin-bottom:14px; }
+    .player-card { background:white; border-radius:8px; padding:12px; margin-bottom:12px; border:1px solid #e6e6e6; box-shadow:0 1px 3px rgba(0,0,0,0.05); }
+    .player-grid { display:grid; gap:12px; }
+    .player-card h3 { margin:0 0 6px 0; color:#00274C; }
+    .meta { color:#444; font-size:0.95rem; }
+    footer { background:#eee; padding:12px; text-align:center; color:#555; margin-top:18px; }
   </style>
 </head>
 <body>
@@ -40,90 +30,63 @@
   </header>
 
   <main>
-    <h2>Notable EDGE/DE Players from D1 Schools</h2>
-    <div id="nfl-list"></div>
+    <h2>Notable EDGE / Defensive Ends (expanded)</h2>
+    <div id="nfl-list" class="player-grid"></div>
   </main>
 
   <footer>
-    <small>Last updated: 2025</small>
+    <small>Last updated: 2025 — bios are brief summaries; please expand if you want more details.</small>
   </footer>
 
   <script>
+    // Expandable list — add or edit objects
     const nflPlayers = [
-      {
-        name: "Myles Garrett",
-        college: "Texas A&M",
-        team: "Cleveland Browns",
-        career: "No. 1 overall pick in 2017. 4x Pro Bowler, 2x First-team All-Pro, and one of the most dominant pass rushers in the NFL."
-      },
-      {
-        name: "Nick Bosa",
-        college: "Ohio State",
-        team: "San Francisco 49ers",
-        career: "2019 Defensive Rookie of the Year, 2x Pro Bowler, and a key player in the 49ers' Super Bowl run."
-      },
-      {
-        name: "Joey Bosa",
-        college: "Ohio State",
-        team: "Los Angeles Chargers",
-        career: "2016 Defensive Rookie of the Year, multiple Pro Bowls, known for his technical pass-rushing skillset."
-      },
-      {
-        name: "Chase Young",
-        college: "Ohio State",
-        team: "New Orleans Saints",
-        career: "2nd overall pick in 2020, NFL Defensive Rookie of the Year, explosive edge talent now with the Saints."
-      },
-      {
-        name: "Micah Parsons",
-        college: "Penn State",
-        team: "Dallas Cowboys",
-        career: "Versatile LB/EDGE hybrid. 2021 Defensive Rookie of the Year, multiple-time All-Pro, one of the NFL’s most feared defenders."
-      },
-      {
-        name: "Von Miller",
-        college: "Texas A&M",
-        team: "Buffalo Bills",
-        career: "Super Bowl 50 MVP, 8x Pro Bowler, 2x Super Bowl champion, widely regarded as one of the best pass rushers in NFL history."
-      },
-      {
-        name: "Khalil Mack",
-        college: "Buffalo",
-        team: "Los Angeles Chargers",
-        career: "2016 NFL Defensive Player of the Year, 7x Pro Bowler, and one of the most disruptive defenders in his era."
-      },
-      {
-        name: "Danielle Hunter",
-        college: "LSU",
-        team: "Houston Texans",
-        career: "Consistent Pro Bowl EDGE with multiple double-digit sack seasons. Known for athleticism and explosiveness."
-      },
-      {
-        name: "Bradley Chubb",
-        college: "NC State",
-        team: "Miami Dolphins",
-        career: "Top-5 pick in 2018, Pro Bowl selection, cornerstone of Miami’s defense when healthy."
-      },
-      {
-        name: "Maxx Crosby",
-        college: "Eastern Michigan",
-        team: "Las Vegas Raiders",
-        career: "Draft steal turned superstar. 2x Pro Bowler, relentless motor, and the face of the Raiders’ defense."
-      }
+      { name:"Myles Garrett", college:"Texas A&M", team:"Cleveland Browns", career:"2017 No.1 overall pick. 4x Pro Bowl, 2x First-team All-Pro. Elite power & speed; franchise cornerstone." },
+      { name:"Nick Bosa", college:"Ohio State", team:"San Francisco 49ers", career:"2019 Defensive Rookie of the Year; 2x Pro Bowler; dominant interior/exterior rusher." },
+      { name:"Joey Bosa", college:"Ohio State", team:"Los Angeles Chargers", career:"2016 Defensive Rookie of the Year; multiple Pro Bowls; technically refined pass rusher." },
+      { name:"Chase Young", college:"Ohio State", team:"New Orleans Saints", career:"2nd overall pick in 2020; explosive edge rusher; Defensive ROTY." },
+      { name:"Micah Parsons", college:"Penn State", team:"Dallas Cowboys", career:"Hybrid LB/EDGE; 2021 DROY, All-Pro; elite in pass rush and coverage." },
+      { name:"Von Miller", college:"Texas A&M", team:"Buffalo Bills", career:"Super Bowl 50 MVP; 8x Pro Bowler; Hall-of-Fame level career production." },
+      { name:"Khalil Mack", college:"Buffalo", team:"Los Angeles Chargers", career:"2016 DPOY; multiple Pro Bowls; feared for pass rush and run defense." },
+      { name:"Danielle Hunter", college:"LSU", team:"Houston Texans", career:"Consistent double-digit sacks; long-armed, high motor rusher." },
+      { name:"Bradley Chubb", college:"NC State", team:"Miami Dolphins", career:"Top draft pick; Pro Bowl talent when healthy; solid interior/exterior play." },
+      { name:"Maxx Crosby", college:"Eastern Michigan", team:"Las Vegas Raiders", career:"High motor, disruptive rusher; 2x Pro Bowler; team leader." },
+
+      { name:"T.J. Watt", college:"Wisconsin", team:"Pittsburgh Steelers", career:"Multiple seasons as NFL sack leader; Defensive Player of the Year finalist multiple times." },
+      { name:"J.J. Watt", college:"Wisconsin", team:"Retired (Texans legacy)", career:"3x Defensive Player of the Year; one of the best pass rushers in NFL history." },
+      { name:"Cameron Jordan", college:"Cal", team:"New Orleans Saints", career:"Longtime Pro Bowl edge; durable, technically talented veteran." },
+      { name:"Dexter Lawrence", college:"Clemson", team:"NY Giants", career:"Powerful run-stopping defensive tackle with pass rush upside." },
+      { name:"Aaron Donald", college:"Pittsburgh", team:"Los Angeles Rams", career:"Multiple DPOY awards; elite interior penetrator (listed here for context)." },
+      { name:"Yannick Ngakoue", college:"Maryland", team:"Minnesota Vikings", career:"Consistent sack producer; effective situational rusher." },
+      { name:"Arik Armstead", college:"Oregon", team:"San Francisco 49ers", career:"Versatile defensive lineman; strong run defender and pass rusher." },
+      { name:"Chandler Jones", college:"Syracuse", team:"Las Vegas Raiders", career:"Veteran pass rusher with multiple double-digit sack seasons." },
+      { name:"Everson Griffen", college:"Frosh/Western Michigan", team:"Free Agent / Vikings legacy", career:"Proven pass rusher in his prime; long career of production." },
+      { name:"Frank Clark", college:"Oregon", team:"KC Chiefs", career:"Key pass rusher on championship defenses; veteran leadership." },
+
+      { name:"Melvin Ingram", college:"South Carolina", team:"Free Agent", career:"Consistent edge presence; known for versatility and playmaking." },
+      { name:"Khalil D. (example)", college:"Example U", team:"Example NFL", career:"Sample entry — replace with real player if desired." },
+      { name:"Calais Campbell", college:"Miami (FL)", team:"Free Agent/Legacy", career:"Long-tenured veteran interior/exterior defender noted for run defense and leadership." },
+      { name:"Akiem Hicks", college:"Wichita State", team:"Retired/Free Agent", career:"Big-bodied defensive end with strong run defense credentials." },
+      { name:"Gregory Rousseau", college:"Miami (FL)", team:"Buffalo Bills", career:"Young top prospect turned productive NFL pass rusher." },
+      { name:"Josh Allen", college:"Kentucky", team:"Jacksonville Jaguars", career:"Interior/edge rusher with excellent athleticism and production." },
+      { name:"Brian Burns", college:"Florida State", team:"Carolina Panthers", career:"Speedy edge rusher; steady sack production since entering the league." },
+      { name:"Josh Sweat", college:"Florida State", team:"Philadelphia Eagles", career:"Explosive long-limbed edge rusher; key contributor to Eagles defense." },
+      { name:"Rashan Gary", college:"Michigan", team:"Green Bay Packers", career:"High upside edge/OLB hybrid; strong athlete and run defender." },
+      { name:"Greg Zuerlein (placeholder)", college:"Missouri S&T", team:"Example", career:"placeholder note" }
     ];
 
     function renderPlayers(list) {
       const container = document.getElementById('nfl-list');
+      container.innerHTML = '';
       list.forEach(p => {
-        const div = document.createElement('div');
-        div.className = 'player-card';
-        div.innerHTML = `
+        const el = document.createElement('div');
+        el.className = 'player-card';
+        el.innerHTML = `
           <h3>${p.name}</h3>
-          <strong>College:</strong> ${p.college}<br>
-          <strong>Current Team:</strong> ${p.team}<br>
+          <div class="meta"><strong>College:</strong> ${p.college} &nbsp; • &nbsp; <strong>Team:</strong> ${p.team}</div>
           <p>${p.career}</p>
         `;
-        container.appendChild(div);
+        container.appendChild(el);
       });
     }
 
@@ -131,4 +94,5 @@
   </script>
 </body>
 </html>
+
 
