@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D1 EDGE/DE Coaches Directory</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      background: #00274C;
+      color: white;
+      padding: 15px;
+    }
+    header h1 {
+      margin-left: 15px;
+      font-size: 1.8em;
+    }
+    .profile-pic {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid white;
+      object-fit: cover;
+    }
+    main {
+      padding: 20px;
+    }
+    h2 {
+      color: #00274C;
+    }
+    .coach-card {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+    footer {
+      background: #eee;
+      padding: 10px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Replace this link with your own picture (e.g., profile.jpg in the repo root) -->
+    <img src="https://via.placeholder.com/60" alt="Profile Picture" class="profile-pic">
+    <h1>D1 EDGE/DE Coaches Directory</h1>
+  </header>
+
+  <main>
+    <section id="coaches-section">
+      <h2>Coaches</h2>
+      <div id="coaches-list"></div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Last updated: 2025</small>
+  </footer>
+
+  <script>
+    const coaches = [
+      { name: "Freddie Roach", school: "Alabama", email: "football@ua.edu", phone: "(205) 348-3600", office: "Tuscaloosa, AL" },
+      { name: "Chidera Uzo-Diribe", school: "Georgia", email: "cuzo@uga.edu", phone: "(706) 542-1515", office: "Athens, GA" },
+      { name: "Lemanski Hall", school: "Clemson", email: "hall@clemson.edu", phone: "(864) 656-2226", office: "Clemson, SC" },
+      { name: "Larry Johnson", school: "Ohio State", email: "ljohnson@osu.edu", phone: "(614) 292-2531", office: "Columbus, OH" },
+      { name: "Shaun Nua", school: "USC", email: "snua@usc.edu", phone: "(213) 740-4204", office: "Los Angeles, CA" },
+      { name: "Jamar Cain", school: "LSU", email: "jcain@lsu.edu", phone: "(225) 578-1151", office: "Baton Rouge, LA" },
+      { name: "John Scott Jr.", school: "Penn State", email: "jscott@psu.edu", phone: "(814) 865-0561", office: "University Park, PA" },
+      { name: "Bo Davis", school: "Texas", email: "bdavis@utexas.edu", phone: "(512) 471-4917", office: "Austin, TX" },
+      { name: "Luther Elliss", school: "Utah", email: "lellis@utah.edu", phone: "(801) 581-8171", office: "Salt Lake City, UT" },
+      { name: "Ross Kolodziej", school: "Wisconsin", email: "rkolodziej@wisc.edu", phone: "(608) 262-1866", office: "Madison, WI" }
+    ];
+
+    function renderCoaches(list) {
+      const container = document.getElementById('coaches-list');
+      container.innerHTML = '';
+      list.forEach(c => {
+        const div = document.createElement('div');
+        div.className = 'coach-card';
+        div.innerHTML = `
+          <strong>${c.name}</strong><br>
+          School: ${c.school}<br>
+          Email: ${c.email || 'N/A'}<br>
+          Phone: ${c.phone || 'N/A'}<br>
+          Office: ${c.office || 'N/A'}
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => renderCoaches(coaches));
+  </script>
+</body>
+</html>
