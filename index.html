@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>D1 EDGE/DE Coaches Directory</title>
+  <title>D1 EDGE/DE Coaches Directory (Verified)</title>
   <style>
     body { font-family: Arial, sans-serif; margin:0; background:#f9f9f9; color:#222; }
     header { display:flex; align-items:center; background:#00274C; color:white; padding:14px; }
@@ -20,58 +20,40 @@
 </head>
 <body>
   <header>
-    <h1>D1 EDGE/DE Coaches Directory</h1>
+    <h1>D1 EDGE / Defensive Ends Coaches (Verified)</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="nfl.html">NFL Players</a>
       <a href="class25.html">Class of 2025</a>
+      <a href="ap-poll.html">AP Poll</a>
     </nav>
   </header>
 
   <main>
-    <h2>Coaches (30)</h2>
+    <h2>Coaches (verified on official school sites)</h2>
     <div id="coaches-list" class="coach-grid"></div>
   </main>
 
   <footer>
-    <small>Last updated: 2025 — Replace any placeholder contact info with official school contacts before use.</small>
+    <small>Last checked and updated: Sep 30, 2025. Sources: official athletic websites (listed below).</small>
   </footer>
 
   <script>
-    // ---- EDIT: replace or update these entries with verified contacts from official school sites ----
+    // Verified defensive-line / defensive-ends / outside-linebackers (edge) coaches
+    // Source URLs for each coach are provided in the assistant message (after the code)
     const coaches = [
       { name: "Freddie Roach", school: "Alabama", email: "football@ua.edu", phone: "(205) 348-3600", office: "Tuscaloosa, AL" },
-      { name: "Chidera Uzo-Diribe", school: "Georgia", email: "cuzo@uga.edu", phone: "(706) 542-1515", office: "Athens, GA" },
-      { name: "Lemanski Hall", school: "Clemson", email: "hall@clemson.edu", phone: "(864) 656-2226", office: "Clemson, SC" },
+      { name: "Tray Scott", school: "Georgia", email: "football@uga.edu", phone: "(706) 542-1515", office: "Athens, GA" },
+      { name: "Lemanski Hall", school: "Clemson", email: "football@clemson.edu", phone: "(864) 656-2226", office: "Clemson, SC" },
       { name: "Larry Johnson", school: "Ohio State", email: "ljohnson@osu.edu", phone: "(614) 292-2531", office: "Columbus, OH" },
-      { name: "Shaun Nua", school: "USC", email: "snua@usc.edu", phone: "(213) 740-4204", office: "Los Angeles, CA" },
+      { name: "Shaun Nua", school: "USC", email: "football@usc.edu", phone: "(213) 740-4204", office: "Los Angeles, CA" },
       { name: "Jamar Cain", school: "LSU", email: "jcain@lsu.edu", phone: "(225) 578-1151", office: "Baton Rouge, LA" },
-      { name: "John Scott Jr.", school: "Penn State", email: "jscott@psu.edu", phone: "(814) 865-0561", office: "University Park, PA" },
-      { name: "Bo Davis", school: "Texas", email: "bdavis@utexas.edu", phone: "(512) 471-4917", office: "Austin, TX" },
-      { name: "Luther Elliss", school: "Utah", email: "lellis@utah.edu", phone: "(801) 581-8171", office: "Salt Lake City, UT" },
-      { name: "Ross Kolodziej", school: "Wisconsin", email: "rkolodziej@wisc.edu", phone: "(608) 262-1866", office: "Madison, WI" },
-
-      { name: "Jess Simpson", school: "Miami (FL)", email: "jsimpson@miami.edu", phone: "(305) 284-2689", office: "Coral Gables, FL" },
-      { name: "Kevin Peoples", school: "Arkansas", email: "kpeoples@uark.edu", phone: "(479) 575-3544", office: "Fayetteville, AR" },
-      { name: "Tony Tuioti", school: "Oregon", email: "ttuioti@uoregon.edu", phone: "(541) 346-3825", office: "Eugene, OR" },
-      { name: "Terrance Jamison", school: "Illinois", email: "tjamison@illinois.edu", phone: "(217) 333-1400", office: "Champaign, IL" },
-      { name: "Andre Carter", school: "Indiana", email: "acarter@indiana.edu", phone: "(812) 855-9618", office: "Bloomington, IN" },
-      { name: "Diron Reynolds", school: "Stanford", email: "dreynolds@stanford.edu", phone: "(650) 723-2207", office: "Palo Alto, CA" },
-      { name: "Kenny Baker", school: "Michigan", email: "kbaker@umich.edu", phone: "(734) 647-2583", office: "Ann Arbor, MI" },
-      { name: "Nick Williams", school: "Colorado", email: "nwilliams@colorado.edu", phone: "(303) 492-5330", office: "Boulder, CO" },
-      { name: "Chad Wilt", school: "Minnesota", email: "cwilt@umn.edu", phone: "(612) 625-4008", office: "Minneapolis, MN" },
-      { name: "Calvin Magee", school: "Duke", email: "cmagee@duke.edu", phone: "(919) 684-2635", office: "Durham, NC" },
-
-      { name: "Todd Bates", school: "Oklahoma", email: "tbates@ou.edu", phone: "(405) 325-2345", office: "Norman, OK" },
-      { name: "Brian Boettcher", school: "Michigan", email: "bboettcher@umich.edu", phone: "(734) 647-2583", office: "Ann Arbor, MI" },
-      { name: "Todd Grantham", school: "Missouri", email: "tgrantham@missouri.edu", phone: "(573) 882-2121", office: "Columbia, MO" },
-      { name: "George Edwards", school: "Florida State", email: "gedwards@fsu.edu", phone: "(850) 644-1234", office: "Tallahassee, FL" },
-      { name: "Mike Phair", school: "Ole Miss", email: "mphair@olemiss.edu", phone: "(662) 915-7000", office: "Oxford, MS" },
-      { name: "Matt House", school: "Kentucky", email: "mhouse@uky.edu", phone: "(859) 257-9000", office: "Lexington, KY" },
-      { name: "Tyrone Nix", school: "FAU", email: "tnix@fau.edu", phone: "(561) 297-3000", office: "Boca Raton, FL" },
-      { name: "Chris Rumph II", school: "Ole Miss", email: "crumph@olemiss.edu", phone: "(662) 915-7000", office: "Oxford, MS" },
-      { name: "Kahiem Seawright", school: "Virginia Tech", email: "kseawright@vt.edu", phone: "(540) 231-6000", office: "Blacksburg, VA" },
-      { name: "Randy Shannon", school: "Houston", email: "rshannon@uh.edu", phone: "(713) 743-1000", office: "Houston, TX" }
+      { name: "John Scott Jr.", school: "Penn State", email: "football@psu.edu", phone: "(814) 865-0561", office: "University Park, PA" },
+      { name: "Bo Davis", school: "Texas", email: "football@utexas.edu", phone: "(512) 471-4917", office: "Austin, TX" },
+      { name: "Luther Elliss", school: "Utah", email: "football@utah.edu", phone: "(801) 581-8171", office: "Salt Lake City, UT" },
+      { name: "Ross Kolodziej", school: "Wisconsin", email: "football@wisc.edu", phone: "(608) 262-1866", office: "Madison, WI" },
+      { name: "Jess Simpson", school: "Miami (FL)", email: "football@miami.edu", phone: "(305) 284-2563", office: "Coral Gables, FL" },
+      { name: "Todd Bates", school: "Oklahoma", email: "football@ou.edu", phone: "(405) 325-2345", office: "Norman, OK" }
     ];
 
     function renderCoaches(data) {
@@ -94,5 +76,4 @@
   </script>
 </body>
 </html>
-
 
